@@ -717,4 +717,38 @@ h4 {
   .benefits {
     gap: 16px;
   }
-} 
+}
+
+/* Desktop & large screens: offset logo ~20px from left (≈ 2 dedos) */
+.logo-img {
+  margin-left: 20px;
+}
+
+/* Tablet: keep the same offset, but respect original height override */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .logo-img {
+    margin-left: 20px;
+  }
+}
+
+/* Tablet / small screens (<=768px): same offset and smaller height */
+@media (max-width: 768px) {
+  .logo-img {
+    margin-left: 20px;
+    /* mantém 2 dedos no tablet */
+    height: 220px;
+    /* respeita a redução em tablet */
+    transform: none;
+  }
+}
+
+/* Mobile (<=480px): center logo */
+@media (max-width: 480px) {
+  .logo-img {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block;
+    height: 180px;
+    transform: none;
+  }
+}
