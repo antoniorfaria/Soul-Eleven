@@ -1,0 +1,720 @@
+/* ===========================
+   RESET E VARIÁVEIS MODERNAS
+   =========================== */
+:root {
+  --cream: #fefaf6;
+  --off-white: #f8f5f2;
+  --beige: #f0eae3;
+  --taupe: #e8dfd6;
+  --terracotta: #d4b8a4;
+  --clay: #c49a7a;
+  /* marrom claro (para IG) */
+  --brown: #a78a72;
+  --dark-brown: #8a725c;
+
+  /* Cores de texto */
+  --text-dark: #5a4a3a;
+  --text-medium: #7a6a5a;
+  --text-light: #9a8a7a;
+
+  /* Gradientes sofisticados */
+  --gradient-cream: linear-gradient(135deg, #fefaf6 0%, #f0eae3 100%);
+  --gradient-warm: linear-gradient(135deg, #f8f5f2 0%, #e8dfd6 100%);
+  --gradient-terracotta: linear-gradient(135deg, #d4b8a4 0%, #c49a7a 100%);
+
+  /* Sombras */
+  --shadow-soft: 0 8px 32px rgba(90, 74, 58, 0.08);
+  --shadow-medium: 0 12px 40px rgba(90, 74, 58, 0.12);
+  --shadow-strong: 0 20px 60px rgba(90, 74, 58, 0.15);
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-dark);
+  background: var(--gradient-cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Tipografia */
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Playfair Display', serif;
+  color: var(--text-dark);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* ===========================
+   HEADER (LOGO ESQUERDA + MENU DIREITA)
+   =========================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(20px);
+  background: rgba(254, 250, 246, 0.85);
+  border-bottom: 1px solid rgba(212, 184, 164, 0.2);
+  height: 120px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.site-header.scrolled {
+  background: rgba(254, 250, 246, 0.95);
+  box-shadow: var(--shadow-soft);
+}
+
+.header-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo-img {
+  width: auto;
+  height: 320px;
+  object-fit: contain;
+  transform: translateY(5px);
+  margin-left: -12px;
+}
+
+.menu-right {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+
+.nav a {
+  color: var(--text-medium);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.nav a:hover {
+  color: var(--text-dark);
+  background: rgba(212, 184, 164, 0.12);
+  transform: translateY(-2px);
+}
+
+/* ===========================
+   SEÇÕES ANIMADAS
+   =========================== */
+.section {
+  padding: 100px 0;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.2, 0.9, 0.2, 1);
+}
+
+.section.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header h3 {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+}
+
+.section-header p {
+  color: var(--text-medium);
+  font-size: 1.1rem;
+}
+
+/* ===========================
+   HERO
+   =========================== */
+.hero {
+  background: var(--gradient-warm);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.hero h2 {
+  font-size: 3.5rem;
+  margin-bottom: 24px;
+  line-height: 1.1;
+}
+
+.brand-highlight {
+  background: linear-gradient(135deg, var(--text-dark) 0%, var(--clay) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===========================
+   COLEÇÃO
+   =========================== */
+.collection {
+  background: var(--off-white);
+}
+
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.collection-card {
+  background: var(--cream);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(212, 184, 164, 0.2);
+}
+
+.collection-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-strong);
+}
+
+.card-image {
+  height: 250px;
+  background: linear-gradient(135deg, var(--beige) 0%, var(--taupe) 100%);
+}
+
+.card-content {
+  padding: 24px;
+}
+
+/* ===========================
+   INSTAGRAM
+   =========================== */
+.instagram {
+  background: var(--gradient-cream);
+}
+
+.insta-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.insta-nav {
+  background: var(--cream);
+  border: 1px solid rgba(212, 184, 164, 0.3);
+  color: var(--text-medium);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.insta-nav:hover {
+  background: var(--gradient-terracotta);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-soft);
+}
+
+.insta-scroll {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 20px 10px;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  flex: 1;
+  scrollbar-width: none;
+}
+
+.insta-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.insta-item {
+  min-width: 280px;
+  height: 280px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  background: var(--beige);
+  flex: 0 0 auto;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-soft);
+}
+
+.insta-item:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: var(--shadow-strong);
+}
+
+.insta-image {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--taupe) 0%, var(--terracotta) 100%);
+}
+
+.insta-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(90, 74, 58, 0.7);
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.insta-item:hover .insta-overlay {
+  opacity: 1;
+}
+
+.insta-overlay i {
+  color: white;
+  font-size: 2rem;
+  transform: scale(0.8);
+  transition: all 0.3s ease;
+}
+
+.insta-item:hover .insta-overlay i {
+  transform: scale(1);
+}
+
+/* CTA IG */
+.insta-cta {
+  text-align: center;
+  margin-top: 12px;
+}
+
+.insta-cta p {
+  display: inline-flex;
+  gap: 8px;
+  align-items: baseline;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: rgba(212, 184, 164, 0.18);
+  color: var(--text-dark);
+}
+
+.insta-cta a {
+  color: var(--clay);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.insta-cta a:hover {
+  text-decoration: underline;
+}
+
+/* ===========================
+   CADASTRO
+   =========================== */
+.cadastro {
+  background: var(--off-white);
+}
+
+.cadastro-card {
+  background: var(--cream);
+  border-radius: 24px;
+  padding: 50px;
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(212, 184, 164, 0.2);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.card-header h4 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+}
+
+.card-header p {
+  color: var(--text-medium);
+  font-size: 1.05rem;
+  margin-bottom: 26px;
+}
+
+.newsletter-form {
+  margin-bottom: 22px;
+}
+
+.input-group {
+  display: flex;
+  gap: 12px;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.input-group input {
+  flex: 1;
+  padding: 16px 20px;
+  border: 1px solid rgba(212, 184, 164, 0.3);
+  border-radius: 50px;
+  background: #fff;
+  color: var(--text-dark);
+  font-size: 1rem;
+  transition: all .2s ease;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: var(--terracotta);
+  box-shadow: 0 0 0 3px rgba(212, 184, 164, 0.15);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.btn-submit {
+  background: var(--gradient-terracotta);
+  color: #fff;
+}
+
+.btn-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+.form-msg {
+  margin-top: 12px;
+  min-height: 20px;
+  font-size: .96rem;
+}
+
+/* Benefícios */
+.benefits {
+  display: flex;
+  justify-content: center;
+  gap: 26px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.benefit {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(212, 184, 164, .12);
+  border-radius: 999px;
+  color: var(--text-medium);
+}
+
+.benefit i {
+  color: var(--clay);
+}
+
+/* ===========================
+   FOOTER
+   =========================== */
+.site-footer {
+  background: var(--text-dark);
+  color: var(--cream);
+  padding: 60px 0 30px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 50px;
+  margin-bottom: 40px;
+}
+
+.footer-brand h3 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+  color: var(--cream);
+}
+
+.footer-brand p {
+  color: var(--terracotta);
+  font-style: italic;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.contact-info h4,
+.social-links h4 {
+  color: var(--cream);
+  margin-bottom: 18px;
+  font-size: 1.1rem;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--terracotta);
+  text-decoration: none;
+  margin-bottom: 10px;
+  transition: color .2s;
+}
+
+.contact-link:hover {
+  color: var(--cream);
+}
+
+.contact-link i {
+  width: 16px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+/* ÍCONE DO INSTAGRAM — ADIÇÃO PEDIDA */
+.footer-ig {
+  font-size: 30px;
+  color: var(--clay);
+  /* marrom claro */
+  transition: .3s;
+}
+
+.footer-ig:hover {
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.ig-svg {
+  display: inline-grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(212, 184, 164, 0.14);
+  text-decoration: none;
+  transition: all .2s;
+}
+
+.ig-svg:hover {
+  background: var(--gradient-terracotta);
+  transform: translateY(-2px);
+}
+
+/* ===========================
+   POP-UP
+   =========================== */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-card {
+  background: #fff;
+  padding: 40px 45px;
+  width: 90%;
+  max-width: 420px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: var(--shadow-medium);
+  animation: fadeIn .3s ease;
+}
+
+.popup-logo {
+  width: 260px;
+  height: auto;
+  display: block;
+  margin: 0 auto 16px;
+}
+
+#popupForm input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #c49a7a;
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+/* Botão da Coleção */
+.btn-colecao {
+  background: rgba(212, 184, 164, 0.18);
+  padding: 12px 26px;
+  border-radius: 999px;
+  color: var(--text-dark);
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: var(--shadow-soft);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(212, 184, 164, 0.25);
+}
+
+.btn-colecao:hover {
+  background: rgba(212, 184, 164, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn-popup {
+  width: 100%;
+  background: var(--gradient-terracotta);
+  border-radius: 30px;
+  padding: 14px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: .2s;
+}
+
+.btn-popup:hover {
+  transform: scale(1.03);
+}
+
+.popup-close {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--text-medium);
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ===========================
+   RESPONSIVIDADE
+   =========================== */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-img {
+    height: 220px;
+    transform: none;
+    margin-left: 0;
+  }
+
+  .site-header {
+    height: 140px;
+  }
+
+  .menu-right {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .section-header h3 {
+    font-size: 2rem;
+  }
+
+  .collection-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .input-group {
+    flex-direction: column;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-links {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .insta-nav {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 60px 0;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .cadastro-card {
+    padding: 30px 20px;
+  }
+
+  .benefits {
+    gap: 16px;
+  }
+} 
