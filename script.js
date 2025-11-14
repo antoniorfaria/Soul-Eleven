@@ -235,3 +235,18 @@ function showPopupAlways() {
 }
 
 console.log('⚡ Soul Eleven — scripts carregados.');
+
+document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.querySelector(".mobile-menu-btn");
+    const logo = document.querySelector(".logo-img");
+
+    if (!btn || !logo) return;
+
+    const updateMenuPosition = () => {
+        const leftOffset = logo.getBoundingClientRect().left;
+        btn.style.marginLeft = leftOffset + "px";
+    };
+
+    updateMenuPosition();
+    window.addEventListener("resize", updateMenuPosition);
+});
